@@ -151,4 +151,4 @@ For questions about the documentation site:
 - v1.0.0 - Initial release with complete documentation structure
 - Full-featured search and navigation
 - Responsive design and image optimization
-- Comprehensive theme coverage
+- Comprehensive theme coverage# wearly-docs
