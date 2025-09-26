@@ -340,7 +340,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
           </div>
         </header>
 
-        <div className="flex" style={{ height: 'calc(100vh - 64px)' }}>
+        <div className="flex min-h-[calc(100vh-64px)]">
           {/* Sidebar */}
           <nav className={`
             fixed md:static inset-y-0 left-0 z-40 w-80 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
@@ -431,7 +431,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
           )}
 
           {/* Main Content */}
-          <main className="flex-1 bg-gray-50 dark:bg-gray-900 overflow-y-auto">
+          <main className="flex-1 bg-gray-50 dark:bg-gray-900">
             {children}
           </main>
         </div>
