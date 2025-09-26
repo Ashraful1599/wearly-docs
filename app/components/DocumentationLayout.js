@@ -250,7 +250,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors flex flex-col h-screen">
         {/* Header */}
         <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,12 +340,13 @@ const DocumentationLayout = ({ children, currentSection }) => {
           </div>
         </header>
 
-        <div className="flex min-h-[calc(100vh-64px)]">
+        <div className="flex flex-1 overflow-hidden">
           {/* Sidebar */}
           <nav className={`
-            fixed md:static inset-y-0 left-0 z-40 w-80 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
-            transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform
-            flex flex-col h-full
+            fixed inset-y-0 left-0 z-40 w-80 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
+            transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform
+            flex flex-col h-full overflow-y-auto
+            md:relative md:inset-auto md:translate-x-0 md:transform-none md:h-full
           `}>
             <div className="flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
               {/* Mobile Search */}
@@ -431,7 +432,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
           )}
 
           {/* Main Content */}
-          <main className="flex-1 bg-gray-50 dark:bg-gray-900">
+          <main className="flex-1 bg-gray-50 dark:bg-gray-900 h-full overflow-y-auto">
             {children}
           </main>
         </div>
