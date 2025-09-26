@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Menu, X, ChevronDown, ChevronRight, Home, Book, Settings, Package, HelpCircle, FileText } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const DocumentationLayout = ({ children, currentSection }) => {
@@ -268,10 +269,13 @@ const DocumentationLayout = ({ children, currentSection }) => {
                     className="focus:outline-none"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <img
+                    <Image
                       src="/wearly-logo-croped.webp"
                       alt="Wearly"
+                      width={160}
+                      height={32}
                       className="h-8 w-auto hover:opacity-80 transition-opacity"
+                      priority
                     />
                   </Link>
                 </div>
@@ -315,7 +319,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
                   {showSearchResults && searchQuery && searchResults.length === 0 && (
                     <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 px-4 py-3">
                       <div className="text-gray-500 dark:text-gray-400 text-sm">
-                        No results found for "{searchQuery}"
+                        No results found for {searchQuery}
                       </div>
                     </div>
                   )}
@@ -382,7 +386,7 @@ const DocumentationLayout = ({ children, currentSection }) => {
                   {showSearchResults && searchQuery && searchResults.length === 0 && (
                     <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 px-3 py-2">
                       <div className="text-gray-500 dark:text-gray-400 text-sm">
-                        No results found for "{searchQuery}"
+                        No results found for {searchQuery}
                       </div>
                     </div>
                   )}
